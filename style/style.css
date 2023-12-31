@@ -1,0 +1,291 @@
+@import url(../assets/fonts/SingleDay-Regular.ttf);
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+body, html {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    background: #222;
+    background-color: #222;
+}
+header {
+    width: 100%;
+    color: #c79c71;
+    text-align: center;
+    font-family: 'Single Day', cursive;
+}
+header h1 {margin: 0;}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gameboy {
+    width: 500px;
+    height: 550px;
+    border-radius: 30px;
+    background-color: #423b30;
+}
+#borde_gameboy {
+    width: 500px;
+    height: 550px;
+    border-radius: 30px;
+    background-color: transparent;
+    background: transparent;
+    border: 5px solid #202020;
+    box-shadow: inset 0px 0px 10px 1px #252525;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#borde_pantalla {
+    width: 410px;
+    height: 360px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #ada391;
+    background-color: #ada391;
+    border: 2px solid #ada391;
+    box-shadow: inset 0px 0px 10px 1px #ffffff1c, 0px 0px 5px 1px #8686861c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#pantalla {
+    width: 400px;
+    height: 300px;
+    background-color: #ada391;
+}
+#area_mov {
+    width: 400px;
+    height: 300px;
+    background-color: #ada391;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 15px);
+}
+#cobra {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+}
+.d_none {
+    display: none;
+}
+#contador {
+    width: 400px;
+    height: 50px;
+    background-color: #ada391;
+    border-top: 1px solid #73603c28;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#pausa {
+    border: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: rgb(227, 48, 84);
+}
+#img_pausa {
+    width: 40px;
+    height: 40px;
+}
+#pausa:active {
+    border: 1px solid #343434;
+}
+#logo_info {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    background-color: transparent;
+    background-image: url('../assets/ayuda.svg');
+    background-size: 100% 100%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+@keyframes cambia_color {
+    0% {box-shadow: 0px 0px 5px 1px #ada391;}
+    50% {box-shadow: 0px 0px 5px 1px white;}
+    100% {box-shadow: 0px 0px 5px 1px #ada391;}
+}
+#logo_info:hover {
+    animation: cambia_color 3s infinite;
+    border-radius: 100px;
+    background-size: 99% 99%;
+}
+#logo_info:active {
+    background-color: rgba(255, 255, 255, 0.286);
+    border-radius: 100px;
+    background-size: 95% 95%;
+}
+#empezar {
+    border: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: rgb(112, 221, 93);
+}
+#img_empezar {
+    width: 40px;
+    height: 40px;
+}
+#empezar:active {
+    border: 1px solid #343434;
+}
+#puntos, #puntos_maximo {
+    margin: 0 10px;
+    font-family: 'Single Day', cursive;
+}
+
+#controles {
+    width: 400px;
+    height: 150px;
+    margin-bottom: 10px;
+    background: transparent;
+    background-color: transparent;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+#botonera {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    background: transparent;
+    background-color: transparent;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#control_dificultad {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    background: transparent;
+    background-color: transparent;
+}
+#dificultad {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+#dificultad::-webkit-slider-runnable-track {
+    background: #111;
+    height: 0.45rem;
+    border-radius: 10px;
+}
+#dificultad::-moz-range-track {
+    background: #111;
+    height: 0.45rem;
+    border-radius: 10px;
+}
+#dificultad::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -34px;
+    background: transparent;
+    background-color: transparent;
+    height: 44px;
+    width: 44px;
+    background-image: url('../assets/regulador_velocidad.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.estilo_botones {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    background-color: transparent;
+    border-radius: 10px;
+}
+#boton_arriba {
+    cursor: pointer;
+    align-self: center;
+    background-color: #337860b4;/*185b44b4*/
+}
+#boton_arriba:hover {
+    background-color: #185b44b4;
+}
+#botones_eje_x {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#boton_derecha {
+    cursor: pointer;
+    background-color: #813030b4;/*631a1ab4*/
+}
+#boton_izquierda {
+    cursor: pointer;
+    background-color: #81305fb4;/*4d1636b4*/
+}
+#boton_abajo {
+    cursor: pointer;
+    align-self: center;
+    background-color: #304c81b4;/*193362b4*/
+}
+#boton_derecha:hover {
+    background-color: #631a1ab4;
+}
+#boton_izquierda:hover {
+    background-color: #4d1636b4;
+}
+#boton_abajo:hover {
+    background-color: #193362b4;
+}
+#boton_arriba:active {
+    background-color: #337860b4;
+}
+#boton_derecha:active {
+    background-color: #813030b4;
+}
+#boton_izquierda:active {
+    background-color: #81305fb4;
+}
+#boton_abajo:active {
+    background-color: #304c81b4;
+}
+.estilo_serpiente {
+    width: 20px;
+    height: 15px;
+    background-color: #111;
+}
+@keyframes comida {
+    0% {   
+        transform: rotateY(0deg);
+        background-color: crimson;
+    }
+    50% {
+        transform: rotateY(30deg);
+        background-color: rgb(171, 61, 83);
+    }
+    100% {
+        transform: rotateY(0deg);
+        background-color: crimson;
+    }
+    
+}
+.estilo_comida {
+    width: 20px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: crimson;
+    animation: comida 4s infinite;
+}
